@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vibecall-server
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CLIENT_URL
+        value: https://vibecall.vercel.app
+    scaling:
+      minInstances: 1
+      maxInstances: 3

@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-vibe-darker text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-vibe-blue hover:bg-vibe-blue-light text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-vibe-gray hover:bg-vibe-gray-light text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply bg-vibe-dark border border-vibe-gray text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-vibe-blue focus:border-transparent transition-all duration-200;
+  }
+  
+  .video-tile {
+    @apply relative bg-vibe-dark rounded-lg overflow-hidden shadow-lg;
+  }
+  
+  .control-button {
+    @apply p-3 rounded-full transition-all duration-200 hover:scale-110 active:scale-95;
+  }
+  
+  .control-button.active {
+    @apply bg-vibe-blue;
+  }
+  
+  .control-button.inactive {
+    @apply bg-vibe-gray hover:bg-vibe-gray-light;
+  }
+  
+  .control-button.danger {
+    @apply bg-red-600 hover:bg-red-700;
+  }
+  
+  .chat-message {
+    @apply mb-3 p-3 rounded-lg bg-vibe-dark;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-vibe-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-vibe-gray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-vibe-gray-light;
+}
+
+/* Video element styles */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
