@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: video-meet-striker-server
+    name: video-meet-striker--server
     env: node
     region: oregon
     plan: free
@@ -13,7 +13,7 @@ services:
       - key: PORT
         value: 10000
       - key: CLIENT_URL
-        value: https://video-meet-striker.vercel.app
+        value: https://video-meet-striker-.vercel.app
     scaling:
       minInstances: 1
       maxInstances: 3
