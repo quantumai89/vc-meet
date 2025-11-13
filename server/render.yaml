@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: vid-meet-server
+    name: vc-meet-server
     env: node
     region: oregon
     plan: free
@@ -13,7 +13,7 @@ services:
       - key: PORT
         value: 10000
       - key: CLIENT_URL
-        value: https://vid-meet.vercel.app
+        value: https://vc-meet.vercel.app
     scaling:
       minInstances: 1
       maxInstances: 3
