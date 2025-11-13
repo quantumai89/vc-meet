@@ -6,6 +6,8 @@
 - ✅ Production build successful (107KB optimized)
 - ✅ All bugs fixed and tested
 - ✅ Git repository initialized with clean commit
+- ✅ Front-end: Vercel configuration ready
+- ✅ Back-end: Render deployment configs ready
 - ✅ Environment configurations optimized
 - ✅ Security headers configured
 - ✅ Health check endpoints created
@@ -19,7 +21,7 @@
 1. **Create Render Account**: https://render.com
 2. **Connect GitHub**: Link your GitHub account
 3. **Create Web Service**:
-   - Repository: Your VibeCall repo
+   - Repository name: `vid-meet`
    - Root Directory: `server`
    - Environment: `Node`
    - Build Command: `npm install`
@@ -29,12 +31,12 @@
 ```env
 NODE_ENV=production
 PORT=10000
-CLIENT_URL=https://vibecall.vercel.app
+CLIENT_URL=https://vid-meet.vercel.app
 ```
 
 ### **Expected Result**:
-- Backend URL: `https://vibecall-server.onrender.com`
-- Health Check: `https://vibecall-server.onrender.com/health`
+- Backend URL: `https://vid-meet-server.onrender.com`
+- Health Check: `https://vid-meet-server.onrender.com/health`
 
 ---
 
@@ -47,15 +49,16 @@ CLIENT_URL=https://vibecall.vercel.app
    - Framework: Next.js
    - Build Command: `npm run build`
    - Output Directory: `.next`
+   - Repository: `https://github.com/kirtanPandya93/vid-meet.git`
 
 ### **Environment Variables for Vercel**:
 ```env
-NEXT_PUBLIC_SOCKET_URL=https://vibecall-server.onrender.com
+NEXT_PUBLIC_SOCKET_URL=https://vid-meet-server.onrender.com
 ```
 
 ### **Expected Result**:
-- Frontend URL: `https://vibecall.vercel.app`
-- Health Check: `https://vibecall.vercel.app/health`
+- Frontend URL: `https://vid-meet.vercel.app`
+- Health Check: `https://vid-meet.vercel.app/health`
 
 ---
 

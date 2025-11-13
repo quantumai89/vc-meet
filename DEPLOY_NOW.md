@@ -1,11 +1,11 @@
-# 🚀 DEPLOY VIDEO-MEET-STRIKER NOW!
+# 🚀 DEPLOY VID-MEET NOW!
 
 ## 📋 **STEP 1: Create GitHub Repository** (2 minutes)
 
 ### **Go to GitHub and create the repository:**
 1. Visit: https://github.com/kirtanPandya93
 2. Click **"New Repository"** (green button)
-3. **Repository name**: `video-meet-striker`
+3. **Repository name**: `vid-meet`
 4. **Description**: `VibeCall - Free Video Calling App (Zoom Alternative)`
 5. Set to **Public** ✅
 6. **DON'T** check "Add a README file" ❌
@@ -21,7 +21,7 @@
 git remote remove origin
 
 # Add your new repository
-git remote add origin https://github.com/kirtanPandya93/video-meet-striker.git
+git remote add origin https://github.com/kirtanPandya93/vid-meet.git
 
 # Push to GitHub
 git push -u origin main
@@ -37,9 +37,9 @@ git push -u origin main
 1. Go to: https://render.com
 2. **Sign up/Login** with GitHub
 3. Click **"New +"** → **"Web Service"**
-4. **Connect Repository**: `kirtanPandya93/video-meet-striker`
+4. **Connect Repository**: `kirtanPandya93/vid-meet`
 5. **Configure**:
-   - **Name**: `video-meet-striker-server`
+   - **Name**: `vid-meet-server`
    - **Root Directory**: `server`
    - **Environment**: `Node`
    - **Build Command**: `npm install`
@@ -50,12 +50,12 @@ git push -u origin main
    ```
    NODE_ENV=production
    PORT=10000
-   CLIENT_URL=https://video-meet-striker.vercel.app
+   CLIENT_URL=https://vid-meet.vercel.app
    ```
 
 7. Click **"Create Web Service"**
 8. **Wait 3-5 minutes** for deployment
-9. **Note your backend URL**: `https://video-meet-striker-server.onrender.com`
+9. **Note your backend URL**: `https://vid-meet-server.onrender.com`
 
 ---
 
@@ -65,28 +65,28 @@ git push -u origin main
 1. Go to: https://vercel.com
 2. **Sign up/Login** with GitHub
 3. Click **"New Project"**
-4. **Import**: `kirtanPandya93/video-meet-striker`
+4. **Import**: `kirtanPandya93/vid-meet`
 5. **Configure**:
    - **Framework**: Next.js (auto-detected)
-   - **Project Name**: `video-meet-striker`
+   - **Project Name**: `vid-meet`
    - **Root Directory**: `./` (default)
 
 6. **Add Environment Variable**:
    ```
-   NEXT_PUBLIC_SOCKET_URL=https://video-meet-striker-server.onrender.com
+   NEXT_PUBLIC_SOCKET_URL=https://vid-meet-server.onrender.com
    ```
 
 7. Click **"Deploy"**
 8. **Wait 2-3 minutes** for deployment
-9. **Your app is LIVE**: `https://video-meet-striker.vercel.app`
+9. **Your app is LIVE**: `https://vid-meet.vercel.app`
 
 ---
 
 ## 📋 **STEP 5: Test Your Live App** (2 minutes)
 
 ### **Visit your live app and test:**
-- **Main App**: https://video-meet-striker.vercel.app
-- **Backend Health**: https://video-meet-striker-server.onrender.com/health
+- **Main App**: https://vid-meet.vercel.app
+- **Backend Health**: https://vid-meet-server.onrender.com/health
 
 ### **Test all features:**
 1. ✅ Enter your name
@@ -101,15 +101,15 @@ git push -u origin main
 ## 🎉 **SUCCESS! YOUR APP IS LIVE!**
 
 ### **🌐 Live URLs:**
-- **Frontend**: `https://video-meet-striker.vercel.app`
-- **Backend**: `https://video-meet-striker-server.onrender.com`
-- **GitHub**: `https://github.com/kirtanPandya93/video-meet-striker`
+- **Frontend**: `https://vid-meet.vercel.app`
+- **Backend**: `https://vid-meet-server.onrender.com`
+- **GitHub**: `https://github.com/kirtanPandya93/vid-meet`
 
 ### **📱 Share with the world:**
 ```
 🎉 Check out my new video calling app!
 
-🌐 Try it: https://video-meet-striker.vercel.app
+🌐 Try it: https://vid-meet.vercel.app
 🆓 Completely free - no sign-up required
 🎥 Features: HD video, chat, screen sharing
 📱 Works on all devices

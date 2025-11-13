@@ -15,18 +15,18 @@ Write-Host "🔧 Configuring Git remote..." -ForegroundColor Yellow
 git remote remove origin 2>$null
 
 # Add the new remote
-git remote add origin https://github.com/kirtanPandya93/video-meet-striker.git
+git remote add origin https://github.com/kirtanPandya93/vid-meet.git
 
 # Check if repository exists by trying to fetch
 Write-Host "🔍 Checking repository accessibility..." -ForegroundColor Yellow
-$fetchResult = git ls-remote origin 2>&1
+$null = git ls-remote origin 2>&1
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Repository not found or not accessible" -ForegroundColor Red
     Write-Host "📋 Please create the repository first:" -ForegroundColor Yellow
     Write-Host "   1. Go to https://github.com/kirtanPandya93" -ForegroundColor White
     Write-Host "   2. Click 'New Repository'" -ForegroundColor White
-    Write-Host "   3. Name: video-meet-striker" -ForegroundColor White
+    Write-Host "   3. Name: vid-meet" -ForegroundColor White
     Write-Host "   4. Set to Public" -ForegroundColor White
     Write-Host "   5. Don't initialize with README" -ForegroundColor White
     Write-Host "   6. Click 'Create Repository'" -ForegroundColor White
@@ -46,7 +46,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "1. Deploy Backend to Render: https://render.com" -ForegroundColor White
     Write-Host "2. Deploy Frontend to Vercel: https://vercel.com" -ForegroundColor White
     Write-Host ""
-    Write-Host "📋 Repository: https://github.com/kirtanPandya93/video-meet-striker" -ForegroundColor Green
+    Write-Host "📋 Repository: https://github.com/kirtanPandya93/vid-meet" -ForegroundColor Green
     Write-Host "📖 Deployment Guide: See GITHUB_SETUP.md" -ForegroundColor Green
 } else {
     Write-Host "❌ Failed to push to GitHub" -ForegroundColor Red
