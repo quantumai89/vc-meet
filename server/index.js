@@ -12,6 +12,7 @@ const io = socketIo(server, {
   cors: {
     origin: [
       process.env.CLIENT_URL || "http://localhost:3000",
+      "https://vc-meet.netlify.app",
       "https://vc-meet.vercel.app",
       "https://*.vercel.app"
     ],
