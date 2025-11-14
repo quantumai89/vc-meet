@@ -26,11 +26,17 @@ class SocketManager {
     }
 
     const url = serverUrl || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001';
-    
+
+    console.log('📡 Connecting to VibeCall server at:', url);
+
     this.socket = io(url, {
       transports: ['websocket', 'polling'],
       timeout: 20000,
-      forceNew: true,
+      reconnection: true,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000,
+      reconnectionAttempts: 5,
+      forceNew: false,
     });
 
     this.socket.on('connect', () => {
@@ -43,6 +49,10 @@ class SocketManager {
 
     this.socket.on('connect_error', (error: Error) => {
       console.error('❌ Connection error:', error);
+    });
+
+    this.socket.on('error', (error: any) => {
+      console.error('❌ Socket error:', error);
     });
 
     return this.socket;

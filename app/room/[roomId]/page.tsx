@@ -25,6 +25,7 @@ export default function RoomPage({ params }: RoomPageProps) {
 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isJoined, setIsJoined] = useState(false);
+  const [connectionTimeout, setConnectionTimeout] = useState(false);
 
   const {
     socket,
@@ -52,6 +53,18 @@ export default function RoomPage({ params }: RoomPageProps) {
     startScreenShare,
     stopScreenShare,
   } = useWebRTC(socket, currentUserId, users);
+
+  // Connection timeout after 30 seconds
+  useEffect(() => {
+    if (!isConnected) {
+      const timer = setTimeout(() => {
+        setConnectionTimeout(true);
+      }, 30000);
+      return () => clearTimeout(timer);
+    } else {
+      setConnectionTimeout(false);
+    }
+  }, [isConnected]);
 
   // Join room when socket connects
   useEffect(() => {
@@ -101,9 +114,36 @@ export default function RoomPage({ params }: RoomPageProps) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-vibe-darker">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-vibe-blue mx-auto mb-4"></div>
-          <p className="text-white text-lg">Connecting to room...</p>
-          <p className="text-vibe-gray-light text-sm mt-2">Room: {roomId}</p>
+          {connectionTimeout ? (
+            <>
+              <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">⚠️</span>
+              </div>
+              <p className="text-white text-lg font-semibold mb-2">Connection Failed</p>
+              <p className="text-vibe-gray-light text-sm mb-6">Unable to connect to the server. Make sure the backend server is running.</p>
+              <button
+                onClick={() => {
+                  setConnectionTimeout(false);
+                  window.location.reload();
+                }}
+                className="bg-vibe-blue hover:bg-vibe-blue-light text-white px-6 py-2 rounded-lg font-medium transition"
+              >
+                Try Again
+              </button>
+              <button
+                onClick={() => router.push('/')}
+                className="ml-3 bg-vibe-dark hover:bg-vibe-gray text-white px-6 py-2 rounded-lg font-medium transition"
+              >
+                Go Back
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-vibe-blue mx-auto mb-4"></div>
+              <p className="text-white text-lg">Connecting to room...</p>
+              <p className="text-vibe-gray-light text-sm mt-2">Room: {roomId}</p>
+            </>
+          )}
         </div>
       </div>
     );
